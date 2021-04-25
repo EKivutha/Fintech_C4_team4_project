@@ -1,24 +1,36 @@
-import logo from './logo.png';
+
 import './App.css';
+import Home from './layout/home'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import routes from "./routes";
+import withTracker from "./withTracker";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         welcome
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router >
+    
+    <div>
+      {routes.map((route, index) => {
+        return (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={withTracker(props => {
+              return (
+                <route.layout {...props}>
+                  <route.component {...props} />
+                </route.layout>
+              );
+            })}
+          />
+        );
+      })}
     </div>
+    
+  </Router>
+    
   );
 }
 
