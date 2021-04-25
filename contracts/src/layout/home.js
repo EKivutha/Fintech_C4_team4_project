@@ -8,6 +8,7 @@ import Header from './header'
 const useStyles = makeStyles({
     root: {
       minWidth: 'auto',
+      margin:'15px',
     },
     bullet: {
       display: 'inline-block',
@@ -24,7 +25,7 @@ const useStyles = makeStyles({
        display: 'flex',
        flexFlow:'row ',
        flexWrap:'wrap',
-       justifyContent:'space-between',
+       justifyContent:'space-around',
     }
   });
 
@@ -35,7 +36,7 @@ const bull = <span className={classes.bullet}>•</span>;
 
         
         return (
-            <div>
+            <div className={classes.root}>
                 <div>
                     <Header/>
                 </div>

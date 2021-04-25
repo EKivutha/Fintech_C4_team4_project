@@ -41,6 +41,7 @@ import {
         paddingLeft: 0,
       },
       marginBottom: theme.spacing(20),
+      paddingBottom: '50px',
     },
     logo: {
       fontFamily: "Work Sans, sans-serif",
